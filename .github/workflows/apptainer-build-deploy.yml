@@ -1,0 +1,31 @@
+name: Apptainer Build Deploy
+
+on: workflow_dispatch
+
+
+jobs:
+  build-container:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    container:
+        image: godlovedc/apptainer:latest
+        options: --privileged
+
+    name: Build Container
+    steps:
+
+      - name: Check out code for the container builds
+        uses: actions/checkout@v4
+
+      - name: Build Container
+        run: |
+           apptainer build pybeast.sif Apptainer.def
+
+      - name: Login and Deploy Container
+        if: (github.event_name != 'pull_request')
+        run: |
+           echo ${{ secrets.GITHUB_TOKEN }} | apptainer remote login -u ${{ secrets.GHCR_USERNAME }} --password-stdin oras://ghcr.io
+           apptainer push pybeast.sif oras://ghcr.io/${GITHUB_REPOSITORY}:${tag}

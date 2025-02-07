@@ -1,0 +1,15 @@
+name: pybeast
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - pyqt
+  - pyopengl
+  - numpy
+  - wxpython
+  - matplotlib
+  - pygobject
+  - jupyter
+  - pip
+  - pip:
+      - -e /home/student/pybeast
