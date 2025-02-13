@@ -52,19 +52,11 @@ docker run -it --rm --env DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v $
 
 ### Windows & Mac
 
-On windows we need run in XServer through a third party software and connect it to our Linux container.  TODO
+On windows we need run in XServer through a third party software and connect it to our Linux container.  At the moment, a VM version is available.
 
 ## Code Structure
 
 The core functionality of `pybeast` is provided by the packages implemented in the `pybeast/core` directory. All GUI-related code can be found in the `pybeast/gui` directory. Demo experiments are defined in the modules within the `pybeast/demos` directory. To include new demo, simply add a python module to this directory and configure the required flags.
-
-## TODOs
-
-- Implement parallelization: Parallelize runs to enhance runtime performance, as the current code is slow.
-- Profile runs and identify bottlenecks: Improve runtime by profiling the code, then optimizing critical subroutines by rewriting them in a low-level language and interfacing with Python.
-- Implement automated unit testing: Set up automated unit tests to ensure code maintainability.
-- Polish coursework: Refine and finalize the coursework.
-- Migrate outstanding demo projects from the C++ codebase: Transition existing demo projects from C++ to Python.
 
 ## License Type: 
 
@@ -72,6 +64,6 @@ Please see LICENSE file. The software is provided "as is", without warranty of a
 
 ## Authors and Acknowledgments
 
-  - Orginal codebase developed by TODO
+  - Orginal codebase developed by David Gordon, University of Leeds
   - Translation and extension to python done by Dr. Lukas Deutz
-  - Project maintainers TODO
+  - Project maintainers John Hodrien, Netta Cohen
