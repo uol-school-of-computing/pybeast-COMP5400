@@ -28,4 +28,4 @@ jobs:
         if: (github.event_name != 'pull_request')
         run: |
            echo ${{ secrets.GITHUB_TOKEN }} | apptainer remote login -u ${{ secrets.GHCR_USERNAME }} --password-stdin oras://ghcr.io
-           apptainer push pybeast.sif oras://ghcr.io/${GITHUB_REPOSITORY}:${tag}
+           apptainer push pybeast.sif oras://ghcr.io/${GITHUB_REPOSITORY,,}:${tag}
