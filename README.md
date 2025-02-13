@@ -65,5 +65,5 @@ Please see LICENSE file. The software is provided "as is", without warranty of a
 ## Authors and Acknowledgments
 
   - Orginal codebase developed by David Gordon, University of Leeds
-  - Translation and extension to python done by Dr. Lukas Deutz
+  - Translation and extension to python done by Dr. Lukas Deutz, University of Leeds
   - Project maintainers John Hodrien, Netta Cohen
