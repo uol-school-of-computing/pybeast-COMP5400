@@ -7,7 +7,7 @@ following command from this directory:
 apptainer build pybeast_latest.sif Apptainer.def
 ```
 ### Apptainer
-apptainer pull oras://ghcr.io/uol-school-of-computing/pybeast:latest
+apptainer pull oras://ghcr.io/uol-school-of-computing/pybeast-comp5400:latest
 
 ## Using prebuilt containers
 
@@ -15,7 +15,7 @@ Both Docker and Apptainer images are prebuilt and hosted in GHCR.  You can
 pull these down instead of building from scratch:
 
 ### Docker
-docker pull ghcr.io/uol-school-of-computing/pybeast:main
+docker pull ghcr.io/uol-school-of-computing/pybeast-comp5400:main
 
 ## Usage
 
@@ -31,13 +31,17 @@ If you wanted an shell within the container:
 apptainer run pybeast_latest.sif bash -i
 ```
 
-If you modify the code, you need to run the following commands before rerunning pyBEAST:
+### School of Computer Science Linux systems
+You can skip downloading or build in the container if you're running this on our
+internal Linux systems, as it's already been downloaded, and is available in a module.
+To use this, assuming you're within the directory of the checked out repository, you can do:
 
 ```
-cd pybeast-COMP5400
 module add comp5400
 runBEAST
 ```
+
+This simple uses a wrapper script to run the beast.py entrypoint within the Apptainer container.
 
 ## Notes
 
